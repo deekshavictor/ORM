@@ -21,28 +21,28 @@ Execute Django admin and create details for 10 cars
 admin.py
 
 from django.contrib import admin 
-from.models import Loan
-class LoanAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(Loan,LoanAdmin)
+from .models import Car_Inventory, Car_InventoryAdmin 
+admin.site.register(Car_Inventory, Car_InventoryAdmin)
 
 models.py
 
-from django.db import models
-from django.contrib import admin
- 
-class Loan(models.Model):
- Name=models.CharField(max_length=10)
- Accountno=models.IntegerField(primary_key="Refno")
- Address=models.CharField(max_length=30)
- Aadharno=models.IntegerField()
- Email=models.EmailField()
+from django.db import models 
+from django.contrib import admin 
 
- class LoanAdmin(admin.ModelAdmin):
-  list_display=('Name','Accountno','Address','Aadharno','Email')
+class  Car_Inventory(models.Model): 
+    Car_Model = models.CharField()
+    Engine_Type = models.CharField() 
+    Car_Type = models.CharField() 
+    Date = models.DateField()
+    Car_Mileage = models.IntegerField()  
+    
+
+class Car_InventoryAdmin(admin.ModelAdmin): 
+    list_display = ('Car_Model', 'Engine_Type', 'Car_Type', 'Date', 'Car_Mileage')
 ```
 # OUTPUT
-<img width="1908" height="967" alt="deekshaorm" src="https://github.com/user-attachments/assets/ce1d16ec-98c7-4f33-bb7f-7f7b0a7ff907" />
+
+<img width="1916" height="976" alt="deekshaorm" src="https://github.com/user-attachments/assets/d9109f97-4072-49da-81af-043b94717c53" />
 
 
 # RESULT
